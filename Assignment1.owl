@@ -1,0 +1,292 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.unige.it/ambientIntelligence/assignment1"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.unige.it/ambientIntelligence/assignment1">
+    <Prefix name="" IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Bar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Client"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Corridor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Gym"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Hospitality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#LockerRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Reception"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Relax"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Shower"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SoccerBall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SoccerField"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SwimmingPool"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisBall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisField"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisRacket"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Trainer"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#VolleyBall"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#VolleyField"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#equippedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isOccupied"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isPlaying"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isBusy"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isFull"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Gym"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+            <ObjectMinCardinality cardinality="4">
+                <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
+                <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+            </ObjectMinCardinality>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Bar"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Client"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Corridor"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Gym"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Hospitality"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#LockerRoom"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Reception"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Relax"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Shower"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SoccerBall"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SoccerField"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sport"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SwimmingPool"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisBall"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisField"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisRacket"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Trainer"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#VolleyBall"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#VolleyField"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#equippedWith"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isIn"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isOccupied"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isPlaying"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Client"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Client"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Trainer"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#equippedWith"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isIn"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isOccupied"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isPlaying"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sport"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isBusy"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isFull"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isBusy"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isFull"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
