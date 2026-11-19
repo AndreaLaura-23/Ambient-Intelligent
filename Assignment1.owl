@@ -55,9 +55,6 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SoccerBall"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SoccerField"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sport"/>
     </Declaration>
     <Declaration>
@@ -82,7 +79,10 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#VolleyBall"/>
     </Declaration>
     <Declaration>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#VolleyField"/>
+        <Class IRI="#FullArea"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NeedsCleaning"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#equippedWith"/>
@@ -91,13 +91,7 @@
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isIn"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isOccupied"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isPlaying"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
@@ -106,16 +100,22 @@
         <ObjectProperty IRI="#hasPlayer"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isBusy"/>
+        <DataProperty IRI="#isBusy"/>
     </Declaration>
     <Declaration>
-        <DataProperty IRI="#isFull"/>
+        <DataProperty IRI="#isClean"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#maxCapacity"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#receptionist"/>
+        <NamedIndividual IRI="#cleaner1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#gym1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lockerRoom1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#tennisField1"/>
@@ -136,14 +136,23 @@
         <NamedIndividual IRI="#trainer1"/>
     </Declaration>
     <EquivalentClasses>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisField"/>
-        <ObjectIntersectionOf>
-            <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisField"/>
-            <ObjectMinCardinality cardinality="4">
-                <ObjectProperty IRI="#hasPlayer"/>
-                <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
-            </ObjectMinCardinality>
-        </ObjectIntersectionOf>
+        <Class IRI="#FullArea"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Gym"/>
+                <ObjectMinCardinality cardinality="12">
+                    <ObjectProperty IRI="#hasPlayer"/>
+                    <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+                </ObjectMinCardinality>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisField"/>
+                <ObjectMinCardinality cardinality="4">
+                    <ObjectProperty IRI="#hasPlayer"/>
+                    <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+                </ObjectMinCardinality>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
     </EquivalentClasses>
     <SubClassOf>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Bar"/>
@@ -186,10 +195,6 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#SoccerField"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sport"/>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
     </SubClassOf>
@@ -229,7 +234,11 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Equipment"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#VolleyField"/>
+        <Class IRI="#FullArea"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NeedsCleaning"/>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
     </SubClassOf>
     <DisjointClasses>
@@ -238,9 +247,18 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
     </DisjointClasses>
-    <ClassAssertion>
+    <DisjointClasses>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
-        <NamedIndividual IRI="#receptionist"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisField"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Trainer"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Gym"/>
+        <NamedIndividual IRI="#gym1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#LockerRoom"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#TennisField"/>
@@ -286,15 +304,36 @@
         <NamedIndividual IRI="#tennisPlayer4"/>
         <NamedIndividual IRI="#tennisField1"/>
     </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
+        <NamedIndividual IRI="#trainer1"/>
+        <NamedIndividual IRI="#gym1"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isBusy"/>
+        <NamedIndividual IRI="#cleaner1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isClean"/>
+        <NamedIndividual IRI="#gym1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#maxCapacity"/>
+        <NamedIndividual IRI="#gym1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">12</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isClean"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#maxCapacity"/>
         <NamedIndividual IRI="#tennisField1"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
     </DataPropertyAssertion>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
     <InverseObjectProperties>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isPlaying"/>
         <ObjectProperty IRI="#hasPlayer"/>
@@ -308,32 +347,19 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isOccupied"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isPlaying"/>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Client"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Client"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Trainer"/>
+        <ObjectUnionOf>
+            <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
+            <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Trainer"/>
+        </ObjectUnionOf>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPlayer"/>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#equippedWith"/>
@@ -344,16 +370,8 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isOccupied"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isPlaying"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sport"/>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#subscribedTo"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Sector"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
@@ -363,16 +381,12 @@
         <ObjectProperty IRI="#hasPlayer"/>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
     </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
-    </ObjectPropertyRange>
     <DataPropertyDomain>
-        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isBusy"/>
-        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Person"/>
+        <DataProperty IRI="#isBusy"/>
+        <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
-        <DataProperty IRI="#isFull"/>
+        <DataProperty IRI="#isClean"/>
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -380,17 +394,77 @@
         <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
     </DataPropertyDomain>
     <DataPropertyRange>
-        <DataProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#isBusy"/>
+        <DataProperty IRI="#isBusy"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
-        <DataProperty IRI="#isFull"/>
+        <DataProperty IRI="#isClean"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty IRI="#maxCapacity"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Area"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#isClean"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#NeedsCleaning"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#Staff"/>
+                <Variable IRI="urn:swrl:var#t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <DataPropertyAtom>
+                <DataProperty IRI="#isBusy"/>
+                <Variable IRI="urn:swrl:var#t"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <DataPropertyAtom>
+                <DataProperty IRI="#isBusy"/>
+                <Variable IRI="urn:swrl:var#c"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#isClean"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="http://www.semanticweb.org/andre/ontologies/2026/10/untitled-ontology-11#workIn"/>
+                <Variable IRI="urn:swrl:var#c"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
 </Ontology>
 
 
