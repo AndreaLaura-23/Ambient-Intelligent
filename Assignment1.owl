@@ -143,7 +143,7 @@
     <EquivalentClasses>
         <Class IRI="#Gym"/>
         <ObjectIntersectionOf>
-            <Class IRI="#Gym"/>
+            <Class IRI="#Area"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#equippedWith"/>
                 <Class IRI="#PullUpBar"/>
@@ -153,7 +153,7 @@
     <EquivalentClasses>
         <Class IRI="#Hospitality"/>
         <ObjectIntersectionOf>
-            <Class IRI="#Hospitality"/>
+            <Class IRI="#Area"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#equippedWith"/>
                 <Class IRI="#Bar"/>
@@ -163,7 +163,7 @@
     <EquivalentClasses>
         <Class IRI="#LockerRoom"/>
         <ObjectIntersectionOf>
-            <Class IRI="#LockerRoom"/>
+            <Class IRI="#Area"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#equippedWith"/>
                 <Class IRI="#Shower"/>
@@ -183,7 +183,7 @@
     <EquivalentClasses>
         <Class IRI="#Relax"/>
         <ObjectIntersectionOf>
-            <Class IRI="#Relax"/>
+            <Class IRI="#Sector"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#includeArea"/>
                 <Class IRI="#Hospitality"/>
@@ -195,9 +195,23 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#Sport"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sector"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#includeArea"/>
+                <Class IRI="#Gym"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#includeArea"/>
+                <Class IRI="#TennisField"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#TennisField"/>
         <ObjectIntersectionOf>
-            <Class IRI="#TennisField"/>
+            <Class IRI="#Area"/>
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#equippedWith"/>
                 <Class IRI="#TennisBall"/>
