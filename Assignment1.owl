@@ -352,6 +352,9 @@
         <ObjectProperty IRI="#hasPlayer"/>
         <ObjectProperty IRI="#isPlaying"/>
     </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#isWorkingInto"/>
+    </FunctionalObjectProperty>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#equippedWith"/>
         <Class IRI="#Area"/>
@@ -420,6 +423,35 @@
         <DataProperty IRI="#maxCapacity"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
     </DataPropertyRange>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Cleaner"/>
+                <Variable IRI="urn:swrl:var#c"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#isWorking"/>
+                <Variable IRI="urn:swrl:var#c"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Area"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#isClean"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#isWorkingInto"/>
+                <Variable IRI="urn:swrl:var#c"/>
+                <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
 </Ontology>
 
 
