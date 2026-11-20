@@ -65,9 +65,6 @@
         <Class IRI="#Staff"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#SwimmingPool"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#TennisBall"/>
     </Declaration>
     <Declaration>
@@ -92,13 +89,22 @@
         <ObjectProperty IRI="#isPlaying"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#isWorkingInto"/>
+    </Declaration>
+    <Declaration>
         <DataProperty IRI="#isClean"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isWorking"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#maxCapacity"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#andrea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#antonello"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#chiara"/>
@@ -165,6 +171,16 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <EquivalentClasses>
+        <Class IRI="#NeedsCleaning"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Area"/>
+            <DataHasValue>
+                <DataProperty IRI="#isClean"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+            </DataHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
         <Class IRI="#Relax"/>
         <ObjectIntersectionOf>
             <Class IRI="#Relax"/>
@@ -175,24 +191,6 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#includeArea"/>
                 <Class IRI="#LockerRoom"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Sport"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Sport"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#includeArea"/>
-                <Class IRI="#Gym"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#includeArea"/>
-                <Class IRI="#SwimmingPool"/>
-            </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#includeArea"/>
-                <Class IRI="#TennisField"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -263,10 +261,6 @@
         <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#SwimmingPool"/>
-        <Class IRI="#Area"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#TennisBall"/>
         <Class IRI="#Equipment"/>
     </SubClassOf>
@@ -292,6 +286,10 @@
         <Class IRI="#Client"/>
         <Class IRI="#Staff"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Cleaner"/>
+        <NamedIndividual IRI="#antonello"/>
+    </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Gym"/>
         <NamedIndividual IRI="#gym1"/>
@@ -327,6 +325,16 @@
         <NamedIndividual IRI="#stefania"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#isWorking"/>
+        <NamedIndividual IRI="#antonello"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isClean"/>
+        <NamedIndividual IRI="#gym1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#maxCapacity"/>
         <NamedIndividual IRI="#gym1"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
@@ -360,6 +368,10 @@
         <ObjectProperty IRI="#isPlaying"/>
         <Class IRI="#Client"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isWorkingInto"/>
+        <Class IRI="#Staff"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#equippedWith"/>
         <Class IRI="#Equipment"/>
@@ -376,6 +388,10 @@
         <ObjectProperty IRI="#isPlaying"/>
         <Class IRI="#Area"/>
     </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isWorkingInto"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#isClean"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
@@ -385,11 +401,19 @@
         <Class IRI="#Area"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
+        <DataProperty IRI="#isWorking"/>
+        <Class IRI="#Staff"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
         <DataProperty IRI="#maxCapacity"/>
         <Class IRI="#Area"/>
     </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#isClean"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#isWorking"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DataPropertyRange>
