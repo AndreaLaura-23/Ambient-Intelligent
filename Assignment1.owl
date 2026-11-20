@@ -29,6 +29,9 @@
         <Class IRI="#Equipment"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#FullArea"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Gym"/>
     </Declaration>
     <Declaration>
@@ -36,6 +39,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#LockerRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NeedsCleaning"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Person"/>
@@ -73,6 +79,137 @@
     <Declaration>
         <Class IRI="#Trainer"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#equippedWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPlayer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#includeArea"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isPlaying"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#isClean"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#maxCapacity"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#andrea"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#chiara"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#gym1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mario"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#stefania"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tennisField1"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#FullArea"/>
+        <ObjectUnionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="#Gym"/>
+                <ObjectMinCardinality cardinality="6">
+                    <ObjectProperty IRI="#hasPlayer"/>
+                    <Class IRI="#Client"/>
+                </ObjectMinCardinality>
+            </ObjectIntersectionOf>
+            <ObjectIntersectionOf>
+                <Class IRI="#TennisField"/>
+                <ObjectMinCardinality cardinality="4">
+                    <ObjectProperty IRI="#hasPlayer"/>
+                    <Class IRI="#Client"/>
+                </ObjectMinCardinality>
+            </ObjectIntersectionOf>
+        </ObjectUnionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Gym"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Gym"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#equippedWith"/>
+                <Class IRI="#PullUpBar"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Hospitality"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Hospitality"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#equippedWith"/>
+                <Class IRI="#Bar"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#LockerRoom"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#LockerRoom"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#equippedWith"/>
+                <Class IRI="#Shower"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Relax"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Relax"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#includeArea"/>
+                <Class IRI="#Hospitality"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#includeArea"/>
+                <Class IRI="#LockerRoom"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Sport"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#Sport"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#includeArea"/>
+                <Class IRI="#Gym"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#includeArea"/>
+                <Class IRI="#SwimmingPool"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#includeArea"/>
+                <Class IRI="#TennisField"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TennisField"/>
+        <ObjectIntersectionOf>
+            <Class IRI="#TennisField"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#equippedWith"/>
+                <Class IRI="#TennisBall"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#equippedWith"/>
+                <Class IRI="#TennisRacket"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
     <SubClassOf>
         <Class IRI="#Bar"/>
         <Class IRI="#Equipment"/>
@@ -86,6 +223,10 @@
         <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#FullArea"/>
+        <Class IRI="#Area"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Gym"/>
         <Class IRI="#Area"/>
     </SubClassOf>
@@ -95,6 +236,10 @@
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#LockerRoom"/>
+        <Class IRI="#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NeedsCleaning"/>
         <Class IRI="#Area"/>
     </SubClassOf>
     <SubClassOf>
@@ -147,6 +292,110 @@
         <Class IRI="#Client"/>
         <Class IRI="#Staff"/>
     </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#Gym"/>
+        <NamedIndividual IRI="#gym1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TennisField"/>
+        <NamedIndividual IRI="#tennisField1"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#andrea"/>
+        <NamedIndividual IRI="#chiara"/>
+        <NamedIndividual IRI="#mario"/>
+        <NamedIndividual IRI="#stefania"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <NamedIndividual IRI="#tennisField1"/>
+        <NamedIndividual IRI="#andrea"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <NamedIndividual IRI="#tennisField1"/>
+        <NamedIndividual IRI="#chiara"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <NamedIndividual IRI="#tennisField1"/>
+        <NamedIndividual IRI="#mario"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <NamedIndividual IRI="#tennisField1"/>
+        <NamedIndividual IRI="#stefania"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#maxCapacity"/>
+        <NamedIndividual IRI="#gym1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#maxCapacity"/>
+        <NamedIndividual IRI="#tennisField1"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">4</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <ObjectProperty IRI="#isPlaying"/>
+    </InverseObjectProperties>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#equippedWith"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#includeArea"/>
+        <Class IRI="#Sector"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isPlaying"/>
+        <Class IRI="#Client"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#equippedWith"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPlayer"/>
+        <Class IRI="#Client"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#includeArea"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isPlaying"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#isClean"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#isClean"/>
+        <Class IRI="#Area"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#maxCapacity"/>
+        <Class IRI="#Area"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#isClean"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#maxCapacity"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
 </Ontology>
 
 
