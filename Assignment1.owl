@@ -71,9 +71,6 @@
         <Class IRI="#TennisField"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#TennisRacket"/>
-    </Declaration>
-    <Declaration>
         <Class IRI="#Trainer"/>
     </Declaration>
     <Declaration>
@@ -93,6 +90,9 @@
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#isWorkingInto"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#receivesFreeEnergyDrink"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#isClean"/>
@@ -122,6 +122,9 @@
         <NamedIndividual IRI="#gym1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#lockerRoom1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#luca"/>
     </Declaration>
     <Declaration>
@@ -131,7 +134,16 @@
         <NamedIndividual IRI="#mario"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#pullUpBar1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#shower1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#stefania"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tennisBall1"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#tennisField1"/>
@@ -221,10 +233,6 @@
                 <ObjectProperty IRI="#equippedWith"/>
                 <Class IRI="#TennisBall"/>
             </ObjectSomeValuesFrom>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#equippedWith"/>
-                <Class IRI="#TennisRacket"/>
-            </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
@@ -288,10 +296,6 @@
         <Class IRI="#Area"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#TennisRacket"/>
-        <Class IRI="#Equipment"/>
-    </SubClassOf>
-    <SubClassOf>
         <Class IRI="#Trainer"/>
         <Class IRI="#Staff"/>
     </SubClassOf>
@@ -314,8 +318,12 @@
         <NamedIndividual IRI="#bar1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Gym"/>
+        <Class IRI="#Area"/>
         <NamedIndividual IRI="#gym1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Area"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#Client"/>
@@ -324,6 +332,18 @@
     <ClassAssertion>
         <Class IRI="#Barman"/>
         <NamedIndividual IRI="#lucia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PullUpBar"/>
+        <NamedIndividual IRI="#pullUpBar1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Shower"/>
+        <NamedIndividual IRI="#shower1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TennisBall"/>
+        <NamedIndividual IRI="#tennisBall1"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#TennisField"/>
@@ -341,9 +361,24 @@
         <NamedIndividual IRI="#lucia"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#equippedWith"/>
+        <NamedIndividual IRI="#gym1"/>
+        <NamedIndividual IRI="#pullUpBar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#equippedWith"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
+        <NamedIndividual IRI="#shower1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isWorkingInto"/>
         <NamedIndividual IRI="#lucia"/>
         <NamedIndividual IRI="#bar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#equippedWith"/>
+        <NamedIndividual IRI="#tennisField1"/>
+        <NamedIndividual IRI="#tennisBall1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasPlayer"/>
@@ -420,6 +455,10 @@
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
     <InverseObjectProperties>
+        <ObjectProperty IRI="#freeEnergyDrink"/>
+        <ObjectProperty IRI="#receivesFreeEnergyDrink"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
         <ObjectProperty IRI="#hasPlayer"/>
         <ObjectProperty IRI="#isPlaying"/>
     </InverseObjectProperties>
@@ -429,6 +468,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#equippedWith"/>
         <Class IRI="#Area"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#freeEnergyDrink"/>
+        <Class IRI="#Hospitality"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasPlayer"/>
@@ -445,6 +488,10 @@
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#isWorkingInto"/>
         <Class IRI="#Staff"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#receivesFreeEnergyDrink"/>
+        <Class IRI="#Client"/>
     </ObjectPropertyDomain>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#equippedWith"/>
@@ -469,6 +516,10 @@
     <ObjectPropertyRange>
         <ObjectProperty IRI="#isWorkingInto"/>
         <Class IRI="#Area"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#receivesFreeEnergyDrink"/>
+        <Class IRI="#Hospitality"/>
     </ObjectPropertyRange>
     <SubDataPropertyOf>
         <DataProperty IRI="#isClean"/>
@@ -546,11 +597,15 @@
                 <Variable IRI="urn:swrl:var#c"/>
                 <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
             </DataPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#Hospitality"/>
+                <Variable IRI="urn:swrl:var#h"/>
+            </ClassAtom>
         </Body>
         <Head>
             <ObjectPropertyAtom>
                 <ObjectProperty IRI="#freeEnergyDrink"/>
-                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#h"/>
                 <Variable IRI="urn:swrl:var#c"/>
             </ObjectPropertyAtom>
         </Head>
