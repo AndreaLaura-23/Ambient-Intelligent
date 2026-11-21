@@ -9,7 +9,7 @@ The sports center consists of different functional areas dedicated to sports act
 The environment includes clients who use the facilities and staff members responsible for providing services and maintaining the center.
 
 <div align="center">
-  <img src="readme_img/centerMap.png" width="50%"/>
+  <img src="readme_img/centerMap.png" width="60%"/>
   <br>
   <p>Figure 1: map of the center </p>
 </div>
