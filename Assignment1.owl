@@ -137,6 +137,12 @@
         <NamedIndividual IRI="#pullUpBar1"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#sectorRelax"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#sectorSport"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#shower1"/>
     </Declaration>
     <Declaration>
@@ -338,6 +344,14 @@
         <NamedIndividual IRI="#pullUpBar1"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Sector"/>
+        <NamedIndividual IRI="#sectorRelax"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sector"/>
+        <NamedIndividual IRI="#sectorSport"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Shower"/>
         <NamedIndividual IRI="#shower1"/>
     </ClassAssertion>
@@ -346,7 +360,7 @@
         <NamedIndividual IRI="#tennisBall1"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#TennisField"/>
+        <Class IRI="#Area"/>
         <NamedIndividual IRI="#tennisField1"/>
     </ClassAssertion>
     <DifferentIndividuals>
@@ -374,6 +388,26 @@
         <ObjectProperty IRI="#isWorkingInto"/>
         <NamedIndividual IRI="#lucia"/>
         <NamedIndividual IRI="#bar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includeArea"/>
+        <NamedIndividual IRI="#sectorRelax"/>
+        <NamedIndividual IRI="#bar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includeArea"/>
+        <NamedIndividual IRI="#sectorRelax"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includeArea"/>
+        <NamedIndividual IRI="#sectorSport"/>
+        <NamedIndividual IRI="#gym1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#includeArea"/>
+        <NamedIndividual IRI="#sectorSport"/>
+        <NamedIndividual IRI="#tennisField1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#equippedWith"/>
