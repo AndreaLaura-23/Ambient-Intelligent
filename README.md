@@ -17,7 +17,7 @@ In particular, the ontology aims to:
 - Identify areas that have reached a defined occupancy threshold.
 - Identify areas requiring cleaning.
 - Model staff assignments using SWRL rules.
-- 
+  
 ## 2. Ontology Structure
 
 ### 2.1 Class Hierarchy
