@@ -17,7 +17,7 @@
         <Class IRI="#Area"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Bar"/>
+        <Class IRI="#Barman"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Cleaner"/>
@@ -80,6 +80,9 @@
         <ObjectProperty IRI="#equippedWith"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#freeEnergyDrink"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#hasPlayer"/>
     </Declaration>
     <Declaration>
@@ -101,16 +104,28 @@
         <DataProperty IRI="#maxCapacity"/>
     </Declaration>
     <Declaration>
+        <DataProperty IRI="#newClient"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#andrea"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#antonello"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#bar1"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#chiara"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#gym1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#luca"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lucia"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#mario"/>
@@ -147,16 +162,6 @@
             <ObjectSomeValuesFrom>
                 <ObjectProperty IRI="#equippedWith"/>
                 <Class IRI="#PullUpBar"/>
-            </ObjectSomeValuesFrom>
-        </ObjectIntersectionOf>
-    </EquivalentClasses>
-    <EquivalentClasses>
-        <Class IRI="#Hospitality"/>
-        <ObjectIntersectionOf>
-            <Class IRI="#Area"/>
-            <ObjectSomeValuesFrom>
-                <ObjectProperty IRI="#equippedWith"/>
-                <Class IRI="#Bar"/>
             </ObjectSomeValuesFrom>
         </ObjectIntersectionOf>
     </EquivalentClasses>
@@ -223,8 +228,8 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
-        <Class IRI="#Bar"/>
-        <Class IRI="#Equipment"/>
+        <Class IRI="#Barman"/>
+        <Class IRI="#Staff"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#Cleaner"/>
@@ -305,8 +310,20 @@
         <NamedIndividual IRI="#antonello"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Hospitality"/>
+        <NamedIndividual IRI="#bar1"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Gym"/>
         <NamedIndividual IRI="#gym1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Client"/>
+        <NamedIndividual IRI="#luca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Barman"/>
+        <NamedIndividual IRI="#lucia"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#TennisField"/>
@@ -315,9 +332,19 @@
     <DifferentIndividuals>
         <NamedIndividual IRI="#andrea"/>
         <NamedIndividual IRI="#chiara"/>
+        <NamedIndividual IRI="#luca"/>
         <NamedIndividual IRI="#mario"/>
         <NamedIndividual IRI="#stefania"/>
     </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#antonello"/>
+        <NamedIndividual IRI="#lucia"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#isWorkingInto"/>
+        <NamedIndividual IRI="#lucia"/>
+        <NamedIndividual IRI="#bar1"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#hasPlayer"/>
         <NamedIndividual IRI="#tennisField1"/>
@@ -339,8 +366,18 @@
         <NamedIndividual IRI="#stefania"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
+        <DataProperty IRI="#newClient"/>
+        <NamedIndividual IRI="#andrea"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
         <DataProperty IRI="#isWorking"/>
         <NamedIndividual IRI="#antonello"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#newClient"/>
+        <NamedIndividual IRI="#chiara"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
@@ -352,6 +389,26 @@
         <DataProperty IRI="#maxCapacity"/>
         <NamedIndividual IRI="#gym1"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#newClient"/>
+        <NamedIndividual IRI="#luca"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#isWorking"/>
+        <NamedIndividual IRI="#lucia"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#newClient"/>
+        <NamedIndividual IRI="#mario"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#newClient"/>
+        <NamedIndividual IRI="#stefania"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">false</Literal>
     </DataPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="#maxCapacity"/>
@@ -394,6 +451,10 @@
         <Class IRI="#Equipment"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
+        <ObjectProperty IRI="#freeEnergyDrink"/>
+        <Class IRI="#Client"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
         <ObjectProperty IRI="#hasPlayer"/>
         <Class IRI="#Client"/>
     </ObjectPropertyRange>
@@ -425,6 +486,10 @@
         <DataProperty IRI="#maxCapacity"/>
         <Class IRI="#Area"/>
     </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#newClient"/>
+        <Class IRI="#Client"/>
+    </DataPropertyDomain>
     <DataPropertyRange>
         <DataProperty IRI="#isClean"/>
         <Datatype abbreviatedIRI="xsd:boolean"/>
@@ -436,6 +501,10 @@
     <DataPropertyRange>
         <DataProperty IRI="#maxCapacity"/>
         <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#newClient"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
     </DataPropertyRange>
     <DLSafeRule>
         <Body>
@@ -463,6 +532,26 @@
                 <ObjectProperty IRI="#isWorkingInto"/>
                 <Variable IRI="urn:swrl:var#c"/>
                 <Variable IRI="urn:swrl:var#a"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#Client"/>
+                <Variable IRI="urn:swrl:var#c"/>
+            </ClassAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#newClient"/>
+                <Variable IRI="urn:swrl:var#c"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+            </DataPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#freeEnergyDrink"/>
+                <Variable IRI="urn:swrl:var#a"/>
+                <Variable IRI="urn:swrl:var#c"/>
             </ObjectPropertyAtom>
         </Head>
     </DLSafeRule>
