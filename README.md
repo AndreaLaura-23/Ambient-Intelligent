@@ -1,3 +1,4 @@
+#### **GROUP MEMBERS:** Laura Andrea ID: ---, Masaniello Chiara ID: 8434670, Magnasco Chiara ID: 5657434
 # Sports Center Ontology
 **Ambient Intelligence – Assignment 1**
 
