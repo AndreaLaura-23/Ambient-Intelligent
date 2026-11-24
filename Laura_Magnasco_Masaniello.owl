@@ -26,6 +26,9 @@
         <Class IRI="#Client"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#Enter"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Equipment"/>
     </Declaration>
     <Declaration>
@@ -72,6 +75,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Trainer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#connectedTo"/>
     </Declaration>
     <Declaration>
         <ObjectProperty IRI="#equippedWith"/>
@@ -129,6 +135,9 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#lucia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mainEntrance"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#mario"/>
@@ -254,6 +263,10 @@
         <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
+        <Class IRI="#Enter"/>
+        <Class IRI="#Area"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#FullArea"/>
         <Class IRI="#Area"/>
     </SubClassOf>
@@ -340,6 +353,10 @@
         <NamedIndividual IRI="#lucia"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#Enter"/>
+        <NamedIndividual IRI="#mainEntrance"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#PullUpBar"/>
         <NamedIndividual IRI="#pullUpBar1"/>
     </ClassAssertion>
@@ -374,6 +391,28 @@
         <NamedIndividual IRI="#antonello"/>
         <NamedIndividual IRI="#lucia"/>
     </DifferentIndividuals>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#bar1"/>
+        <NamedIndividual IRI="#gym1"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
+        <NamedIndividual IRI="#mainEntrance"/>
+        <NamedIndividual IRI="#tennisField1"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#bar1"/>
+        <NamedIndividual IRI="#gym1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#bar1"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#gym1"/>
+        <NamedIndividual IRI="#tennisField1"/>
+    </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#equippedWith"/>
         <NamedIndividual IRI="#gym1"/>
@@ -387,6 +426,11 @@
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#isWorkingInto"/>
         <NamedIndividual IRI="#lucia"/>
+        <NamedIndividual IRI="#bar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#connectedTo"/>
+        <NamedIndividual IRI="#mainEntrance"/>
         <NamedIndividual IRI="#bar1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
@@ -499,6 +543,13 @@
     <FunctionalObjectProperty>
         <ObjectProperty IRI="#isWorkingInto"/>
     </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#connectedTo"/>
+    </SymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#connectedTo"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#equippedWith"/>
         <Class IRI="#Area"/>
@@ -527,6 +578,10 @@
         <ObjectProperty IRI="#receivesFreeEnergyDrink"/>
         <Class IRI="#Client"/>
     </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#connectedTo"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#equippedWith"/>
         <Class IRI="#Equipment"/>
