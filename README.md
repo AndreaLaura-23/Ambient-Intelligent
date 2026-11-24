@@ -7,7 +7,8 @@
 This project presents an OWL ontology developed using **Protégé** to model a sports center environment.
 
 The sports center consists of different functional areas dedicated to sports activities, relaxation, and hospitality. These areas are organized into sectors and can be equipped with different types of equipment. 
-The environment includes clients who use the facilities and staff members responsible for providing services and maintaining the center.
+The environment includes clients who use the facilities and staff members responsible for providing services and maintaining the center. 
+Two different kinds of sensors are installed in selected areas of the sports center: PIR sensors for motion detection and a badge reader at the entrance for access monitoring.
 
 <div align="center">
   <img src="readme_img/centerMap.png" width="60%"/>
@@ -37,16 +38,18 @@ The ontology is organized around four main classes:
 - **Equipment:** Represents the physical equipment or facilities available in the different areas.
 - **Person:** Represents people interacting with the sports center, including clients and staff.
 - **Sector:** Represents a functional section of the sports center, grouping different areas according to their purpose.
+- **Sensor** Represents sensors installed in some areas.
 
 These classes are further divided into more specific subclasses.
 
 | Main Class | Subclasses |
 |---|---|
 | Sector | Sport, Relax |
-| Area | Gym, TennisField, LockerRoom, Hospitality, FullArea, NeedsCleaning |
-| Equipment | PullUpBar, TennisBall, Shower, Bar |
+| Area | Entrance, Gym, TennisField, LockerRoom, Hospitality, FullArea, NeedsCleaning |
+| Equipment | PullUpBar, TennisBall, Shower |
 | Person | Client, Staff |
 | Staff | Barman, Trainer, Cleaner |
+| Sensor | PIRSensor, BadgeReader |
 
 The distinction between **Sector** and **Area** was introduced to represent two levels of organization. A sector groups areas with a common purpose, while an area represents a specific facility.
 
@@ -67,7 +70,7 @@ This choice allows the reasoner to automatically classify individuals based on t
 >  <div align="center">
 >    <img src="readme_img/gymAssumption.png" width="50%"/>
 >    <br>
->    <p>Figure 2: reasoner assumption of the <code>Gym</code> Area </p>
+>    <p>Figure 2: reasoner inference of the <code>Gym</code> class Area </p>
 >  </div>
 
 Similarly, **TennisField** and **LockerRoom** are defined as **Area** with some **Equipment**.
@@ -99,12 +102,14 @@ Object properties represent relationships between individuals.
 | Object Property | Domain | Range | Characteristics | Description |
 |---|---|---|---|---|
 | `equippedWith` | `Area` | `Equipment` | - | Associates an area with its equipment |
+| `connectedTo` | `Area` | `Area` | Symmetric | Associates two connected areas |
 | `includeArea` | `Sector` | `Area` | - | Associates a sector with its areas |
 | `hasPlayer` | `Area` | `Client` | Inverse of `isPlaying` | Identifies clients playing in an area |
 | `isPlaying` | `Client` | `Area` | Inverse of `hasPlayer` | Identifies the area in which a client is playing |
 | `isWorkingInto` | `Staff` | `Area` | Functional | Associates a staff member with a working area |
 | `freeEnergyDrink` | `Hospitality` | `Client` | Inverse of `receivesFreeEnergyDrink` | Associates a hospitality area with a new client receiving a free energy drink |
 | `receivesFreeEnergyDrink` | `Client` | `Hospitality` | Inverse of `freeEnergyDrink` | Identifies the hospitality area offering a free energy drink to a new client |
+| `installedIn` | `Sensor` | `Area` | - | Assoiates a sensor with the area it is installed into |
 
 
 The properties `hasPlayer`/`isPlaying` and `freeEnergyDrink`/`receivesFreeEnergyDrink` are defined as **inverse properties**.
@@ -223,7 +228,14 @@ Below are the three main conclusions produced by the reasoner:
 ### 1. Full Area Classification and Inverse Playing Inference
 
 - **Assertions:** `tennisField1` (inferred as `TennisField`) is associated with four distinct clients (`andrea`, `chiara`, `mario`, `stefania`) through `hasPlayer`.
-- **Inferred Knowledge:** Since the minimum cardinality of 4 clients for a tennis field is reached, `tennisField1` is automatically classified as `FullArea`. At the same time, due to the inverse property axiom between `hasPlayer` and `isPlaying`, the reasoner infers `isPlaying tennisField1` (and the `Client` class) for all four players.
+- **Inferred Knowledge:** Since the minimum cardinality of 4 clients for a tennis field is reached, `tennisField1` is automatically classified as `FullArea`. Furthermore, because `hasPlayer` is defined as the inverse of `isPlaying`, the reasoner infers the following object property assertions:
+
+  `isPlaying(andrea, tennisField1)`<br>
+`isPlaying(chiara, tennisField1)`<br>
+`isPlaying(mario, tennisField1)`<br>
+`isPlaying(stefania, tennisField1)`<br>
+
+  In addition, due to the range restriction of `hasPlayer`, the reasoner infers that all four individuals belong to the class `Client`.
 
 <div align="center">
   <img src="readme_img/tennisField_fullArea.png" width="45%"/>
@@ -247,7 +259,7 @@ Below are the three main conclusions produced by the reasoner:
 ### 3. Welcome Energy Drink Assignment for New Clients
 
 - **Assertions:** `luca` is asserted as a `Client` with `newClient` set to `true`, and `bar1` is asserted as a `Hospitality` area.
-- **Inferred Knowledge:** The second SWRL rule infers `freeEnergyDrink luca` on `bar1`. Thanks to the inverse property axiom, the reasoner simultaneously infers `receivesFreeEnergyDrink bar1` on `luca`.
+- **Inferred Knowledge:** The second SWRL rule infers the object property assertion: `freeEnergyDrink(bar1, luca)`. Thanks to the inverse property axiom, the reasoner simultaneously infers `receivesFreeEnergyDrink(luca, bar1)`.
 
 <div align="center">
   <img src="readme_img/bar1_freeDrink.png" width="45%"/>
