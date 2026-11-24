@@ -17,6 +17,9 @@
         <Class IRI="#Area"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#BadgeReader"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Barman"/>
     </Declaration>
     <Declaration>
@@ -26,7 +29,7 @@
         <Class IRI="#Client"/>
     </Declaration>
     <Declaration>
-        <Class IRI="#Enter"/>
+        <Class IRI="#Entrance"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Equipment"/>
@@ -47,6 +50,9 @@
         <Class IRI="#NeedsCleaning"/>
     </Declaration>
     <Declaration>
+        <Class IRI="#PIRSensor"/>
+    </Declaration>
+    <Declaration>
         <Class IRI="#Person"/>
     </Declaration>
     <Declaration>
@@ -57,6 +63,9 @@
     </Declaration>
     <Declaration>
         <Class IRI="#Sector"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sensor"/>
     </Declaration>
     <Declaration>
         <Class IRI="#Shower"/>
@@ -92,6 +101,9 @@
         <ObjectProperty IRI="#includeArea"/>
     </Declaration>
     <Declaration>
+        <ObjectProperty IRI="#installedIn"/>
+    </Declaration>
+    <Declaration>
         <ObjectProperty IRI="#isPlaying"/>
     </Declaration>
     <Declaration>
@@ -119,6 +131,9 @@
         <NamedIndividual IRI="#antonello"/>
     </Declaration>
     <Declaration>
+        <NamedIndividual IRI="#badgeEntrance"/>
+    </Declaration>
+    <Declaration>
         <NamedIndividual IRI="#bar1"/>
     </Declaration>
     <Declaration>
@@ -141,6 +156,12 @@
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#mario"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pirGym"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pirLockerRoom"/>
     </Declaration>
     <Declaration>
         <NamedIndividual IRI="#pullUpBar1"/>
@@ -251,6 +272,10 @@
         </ObjectIntersectionOf>
     </EquivalentClasses>
     <SubClassOf>
+        <Class IRI="#BadgeReader"/>
+        <Class IRI="#Sensor"/>
+    </SubClassOf>
+    <SubClassOf>
         <Class IRI="#Barman"/>
         <Class IRI="#Staff"/>
     </SubClassOf>
@@ -263,7 +288,7 @@
         <Class IRI="#Person"/>
     </SubClassOf>
     <SubClassOf>
-        <Class IRI="#Enter"/>
+        <Class IRI="#Entrance"/>
         <Class IRI="#Area"/>
     </SubClassOf>
     <SubClassOf>
@@ -285,6 +310,10 @@
     <SubClassOf>
         <Class IRI="#NeedsCleaning"/>
         <Class IRI="#Area"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PIRSensor"/>
+        <Class IRI="#Sensor"/>
     </SubClassOf>
     <SubClassOf>
         <Class IRI="#PullUpBar"/>
@@ -333,6 +362,10 @@
         <NamedIndividual IRI="#antonello"/>
     </ClassAssertion>
     <ClassAssertion>
+        <Class IRI="#BadgeReader"/>
+        <NamedIndividual IRI="#badgeEntrance"/>
+    </ClassAssertion>
+    <ClassAssertion>
         <Class IRI="#Hospitality"/>
         <NamedIndividual IRI="#bar1"/>
     </ClassAssertion>
@@ -353,8 +386,16 @@
         <NamedIndividual IRI="#lucia"/>
     </ClassAssertion>
     <ClassAssertion>
-        <Class IRI="#Enter"/>
+        <Class IRI="#Entrance"/>
         <NamedIndividual IRI="#mainEntrance"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PIRSensor"/>
+        <NamedIndividual IRI="#pirGym"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#PIRSensor"/>
+        <NamedIndividual IRI="#pirLockerRoom"/>
     </ClassAssertion>
     <ClassAssertion>
         <Class IRI="#PullUpBar"/>
@@ -399,6 +440,11 @@
         <NamedIndividual IRI="#tennisField1"/>
     </DifferentIndividuals>
     <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#installedIn"/>
+        <NamedIndividual IRI="#badgeEntrance"/>
+        <NamedIndividual IRI="#mainEntrance"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
         <ObjectProperty IRI="#connectedTo"/>
         <NamedIndividual IRI="#bar1"/>
         <NamedIndividual IRI="#gym1"/>
@@ -432,6 +478,16 @@
         <ObjectProperty IRI="#connectedTo"/>
         <NamedIndividual IRI="#mainEntrance"/>
         <NamedIndividual IRI="#bar1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#installedIn"/>
+        <NamedIndividual IRI="#pirGym"/>
+        <NamedIndividual IRI="#gym1"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#installedIn"/>
+        <NamedIndividual IRI="#pirLockerRoom"/>
+        <NamedIndividual IRI="#lockerRoom1"/>
     </ObjectPropertyAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="#includeArea"/>
@@ -567,6 +623,10 @@
         <Class IRI="#Sector"/>
     </ObjectPropertyDomain>
     <ObjectPropertyDomain>
+        <ObjectProperty IRI="#installedIn"/>
+        <Class IRI="#Sensor"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
         <ObjectProperty IRI="#isPlaying"/>
         <Class IRI="#Client"/>
     </ObjectPropertyDomain>
@@ -596,6 +656,10 @@
     </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#includeArea"/>
+        <Class IRI="#Area"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#installedIn"/>
         <Class IRI="#Area"/>
     </ObjectPropertyRange>
     <ObjectPropertyRange>
