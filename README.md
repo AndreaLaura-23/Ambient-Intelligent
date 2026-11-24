@@ -1,6 +1,8 @@
-#### **GROUP MEMBERS:** Laura Andrea ID: 4887380, Masaniello Chiara ID: 8434670, Magnasco Chiara ID: 5657434
 # Sports Center Ontology
+
 **Ambient Intelligence – Assignment 1**
+
+**GROUP MEMBERS:** Laura Andrea ID: 4887380, Masaniello Chiara ID: 8434670, Magnasco Chiara ID: 5657434
 
 ## 1. Project Overview
 
@@ -32,7 +34,7 @@ In particular, the ontology aims to:
 
 ### 2.1 Class Hierarchy
 
-The ontology is organized around four main classes:
+The ontology is organized around five main classes:
 
 - **Area:** Represents an individual facility or space within the sports center.
 - **Equipment:** Represents the physical equipment or facilities available in the different areas.
@@ -109,7 +111,7 @@ Object properties represent relationships between individuals.
 | `isWorkingInto` | `Staff` | `Area` | Functional | Associates a staff member with a working area |
 | `freeEnergyDrink` | `Hospitality` | `Client` | Inverse of `receivesFreeEnergyDrink` | Associates a hospitality area with a new client receiving a free energy drink |
 | `receivesFreeEnergyDrink` | `Client` | `Hospitality` | Inverse of `freeEnergyDrink` | Identifies the hospitality area offering a free energy drink to a new client |
-| `installedIn` | `Sensor` | `Area` | - | Assoiates a sensor with the area it is installed into |
+| `installedIn` | `Sensor` | `Area` | - | Associates a sensor with the area it is installed into |
 
 
 The properties `hasPlayer`/`isPlaying` and `freeEnergyDrink`/`receivesFreeEnergyDrink` are defined as **inverse properties**.
@@ -118,6 +120,8 @@ The properties `hasPlayer`/`isPlaying` and `freeEnergyDrink`/`receivesFreeEnergy
 The `equippedWith` property is particularly important because it is used in several defined classes to automatically classify areas according to their equipment.
 
 The `includeArea` property serves a similar purpose at the sector level, enabling automatic classification based on the types of areas included.
+
+Finally, the symmetric `connectedTo` property models the spatial layout of the sports center as a graph (as shown in **Figure 1**), linking directly reachable areas: `mainEntrance`↔`bar1`, `bar1`↔`lockerRoom1`, `bar1`↔`gym1`, and `gym1`↔`tennisField1`.
 
 ---
 
@@ -231,9 +235,9 @@ Below are the three main conclusions produced by the reasoner:
 - **Inferred Knowledge:** Since the minimum cardinality of 4 clients for a tennis field is reached, `tennisField1` is automatically classified as `FullArea`. Furthermore, because `hasPlayer` is defined as the inverse of `isPlaying`, the reasoner infers the following object property assertions:
 
   `isPlaying(andrea, tennisField1)`<br>
-`isPlaying(chiara, tennisField1)`<br>
-`isPlaying(mario, tennisField1)`<br>
-`isPlaying(stefania, tennisField1)`<br>
+  `isPlaying(chiara, tennisField1)`<br>
+  `isPlaying(mario, tennisField1)`<br>
+  `isPlaying(stefania, tennisField1)`<br>
 
   In addition, due to the range restriction of `hasPlayer`, the reasoner infers that all four individuals belong to the class `Client`.
 
@@ -265,7 +269,7 @@ Below are the three main conclusions produced by the reasoner:
   <img src="readme_img/bar1_freeDrink.png" width="45%"/>
   <img src="readme_img/luca_receivesDrink.png" width="45%"/>
   <br>
-  <p>Figure 4: SWRL-inferred <code>freeEnergyDrink</code> on <code>bar1</code></p>
+  <p>Figure 5: SWRL-inferred <code>freeEnergyDrink</code> on <code>bar1</code></p>
 </div>
 
 ---
@@ -274,7 +278,7 @@ Below are the three main conclusions produced by the reasoner:
 
 The ontology can be opened using Protégé.
 
-1. Open Protégé and load the provided `Assignment1.owl` file.
+1. Open Protégé and load the provided `Laura_Magnasco_Masaniello.owl` file.
 2. Inspect the class hierarchy, object properties, data properties, and individuals.
 3. Select the HermiT reasoner.
 4. Start the reasoner to classify the ontology.
@@ -287,7 +291,7 @@ The SWRL rules can be inspected through the Rules view in Protégé.
 
 ## Authors
 
-This project was developed as a collaborative group project for the Ambient Intelligent course in Robotics Engineering Master's Degree at the University of Genoa.
+This project was developed as a collaborative group project for the Ambient Intelligence course in Robotics Engineering Master's Degree at the University of Genoa.
 <div align="center">
 
   <a href="https://github.com/Chiaera"><img src="https://github.com/Chiaera.png" width="60px"/></a>

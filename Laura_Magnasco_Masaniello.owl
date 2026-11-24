@@ -352,6 +352,7 @@
         <Class IRI="#Equipment"/>
         <Class IRI="#Person"/>
         <Class IRI="#Sector"/>
+        <Class IRI="#Sensor"/>
     </DisjointClasses>
     <DisjointClasses>
         <Class IRI="#Client"/>
